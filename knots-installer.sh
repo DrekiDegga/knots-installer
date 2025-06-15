@@ -115,7 +115,7 @@ sha256sum --ignore-missing --check SHA256SUMS || {
     exit 1
 }
 
-# Import and verify GPG keys
+# Import and verify GPG keys (I downloaded and manually imported the keys from here: https://github.com/bitcoinknots/guix.sigs/tree/knots/builder-keys)
 #print_message "$GREEN" "Verifying GPG signature..."
 #gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys E463A93F5F3117EEDE6C7316BD02942421F4889F || {
 #    print_message "$YELLOW" "GPG key import failed. Trying to proceed..."
