@@ -135,7 +135,7 @@ print_message "$GREEN" "Creating data directory at $DATA_DIR..."
 mkdir -p "$DATA_DIR"
 chown "$CURRENT_USER:$CURRENT_USER" "$DATA_DIR"
 
-# Configure Bitcoin Knots
+# Configure Bitcoin Knots.
 print_message "$GREEN" "Configuring Bitcoin Knots..."
 cat > "$DATA_DIR/bitcoin.conf" <<EOF
 daemon=1
@@ -144,13 +144,24 @@ rpcuser=$RPC_USER
 rpcpassword=$RPC_PASSWORD
 rpcallowip=127.0.0.1
 listen=1
+onion=127.0.0.1:9050
+listenonion=1
 txindex=1
 rejectparasites=1
 datacarrier=0
 permitbaremultisig=0
 torcontrol=127.0.0.1:9051
 torpassword=$TOR_PASSWORD
+dbcache=4000
+addnode=lt7o46uct643tvub3hb775qx6kfihvoolabxl4sog2fwrtqmbq6atwid.onion:8333
+addnode=ufmzgrvn2uxzclapi2qzbuqq2nmezjnimnvxxuddyojkzz6jvtnnmgid.onion:8333
+addnode=n22fgclzjtol7ji4hmsnjvd5nz4fom6ht4zl6bxhp7m6sklab6bvxrad.onion:8333
+addnode=kee4o2ol6pazu777c4faikxxklwy63gxj3gt2eobxqmi47wpngexovid.onion:8333
+addnode=tgr2lefxjxwrn3uagphfmfu7py7iz3oieyxpigxrumjxbd56wkb767qd.onion:8333
+addnode=vx5hgfuxqjnmkud4szuk37xnw7kqsr6jjsc62nfc2i24u6tksdfxvoqd.onion:8333
 EOF
+
+
 
 # Add pruning if enabled
 if [[ "$PRUNE" == "yes" ]]; then
